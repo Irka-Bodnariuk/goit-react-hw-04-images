@@ -1,9 +1,21 @@
-export const ImageGalleryItem = () => {
+import { Modal } from 'components/Modal/Modal.styled';
+import { GaleryImg, GaleryItem } from './ImageGalleryItem.styled';
+
+export const ImageGalleryItem = ({ items, onClick }) => {
   return (
-    <div>
-      <li className="gallery-item">
-        <img src="" alt="" />
-      </li>
-    </div>
+    <>
+      {items.map(({ id, webformatURL, largeImageURL, user }) => (
+        <GaleryItem key={id}>
+          <GaleryImg
+            src={webformatURL}
+            alt={user}
+            onClick={() => {
+              onClick(largeImageURL);
+            }}
+          />
+          <Modal />
+        </GaleryItem>
+      ))}
+    </>
   );
 };
