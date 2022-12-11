@@ -1,7 +1,6 @@
-import { Modal } from 'components/Modal/Modal.styled';
 import { GaleryImg, GaleryItem } from './ImageGalleryItem.styled';
 
-export const ImageGalleryItem = ({ items, onClick }) => {
+export const ImageGalleryItem = ({ items, onSelect }) => {
   return (
     <>
       {items.map(({ id, webformatURL, largeImageURL, user }) => (
@@ -10,10 +9,9 @@ export const ImageGalleryItem = ({ items, onClick }) => {
             src={webformatURL}
             alt={user}
             onClick={() => {
-              onClick(largeImageURL);
+              onSelect(largeImageURL);
             }}
           />
-          <Modal />
         </GaleryItem>
       ))}
     </>

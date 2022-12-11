@@ -13,25 +13,20 @@ export const Searchbar = ({ onSubmit }) => {
     event.target.reset();
   };
   return (
-    <div>
-      <Search className="searchbar">
-        <SearchForm className="form" onSubmit={handleSubmit}>
-          <SearchButton type="submit" className="button">
-            <SearchButtonLabel className="button-label">
-              Search
-            </SearchButtonLabel>
-          </SearchButton>
+    <Search>
+      <SearchForm onSubmit={handleSubmit}>
+        <SearchButton type="submit">
+          <SearchButtonLabel>Search</SearchButtonLabel>
+        </SearchButton>
 
-          <SearchInput
-            name="query"
-            className="input"
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search images and photos"
-          />
-        </SearchForm>
-      </Search>
-    </div>
+        <SearchInput
+          name="query"
+          type="text"
+          autoComplete="off"
+          autoFocus
+          placeholder="Search images and photos"
+        />
+      </SearchForm>
+    </Search>
   );
 };
