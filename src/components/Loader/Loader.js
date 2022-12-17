@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { RotatingLines } from 'react-loader-spinner';
 import { Spiner } from './Loader.styled';
 
@@ -13,4 +14,8 @@ export const Loader = ({ visible }) => {
       />
     </Spiner>
   );
+};
+
+Loader.propTypes = {
+  visible: PropTypes.bool.isRequired,
 };
